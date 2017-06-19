@@ -4,5 +4,5 @@ The official team repo for Team MC Hammerhead Shark.
 #Team Members
 - Matt Woods
 - Collin Trammell
-- Danielle W
+- Danielle Williams
 - Kunal Naik
