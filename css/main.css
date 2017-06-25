@@ -1,0 +1,14 @@
+nav {
+	padding: 10px;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#welcome-graph {
+	font-size: 10em;
+	padding: 40px 0px 0px;
+	color: #0176FF;
+}
