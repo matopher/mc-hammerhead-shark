@@ -1,0 +1,33 @@
+a {
+	font-family:sans-serif;
+}
+
+.contact-section {
+	margin: 0 auto;
+	text-align: center;
+	background-color: #333;
+	padding: 25px 0px 50px 0px;
+	color: #FFF;
+}
+
+.intro {
+	background-color: #333;
+	color: #fff;
+}
+
+.testimonial {
+	padding-top: 15px;
+}
+
+.headshot {
+	width: 100px;
+	border-radius: 100%
+}
+
+.contact-section button {
+	margin: 10px;
+}
+
+.contact-section a {
+	color: #fff;
+}
