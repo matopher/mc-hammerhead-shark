@@ -2,9 +2,26 @@ nav {
 	padding: 10px;
 }
 
+div .btn {
+	margin: 15px;
+}
+
 .center {
 	margin: 0 auto;
 	text-align: center;
+}
+
+.features-section {
+	padding: 100px 30px;
+	text-align: center;
+}
+
+.features-section .glyphicon {
+	font-size:5em;
+	padding: 10px;
+	color: #0176FF;
+	text-align: center;
+	margin: 0 auto;
 }
 
 #welcome-graph {
