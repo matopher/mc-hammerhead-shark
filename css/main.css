@@ -13,6 +13,12 @@ div .btn {
 	text-align: center;
 }
 
+.col-centered {
+	margin: 0 auto;
+	float: none;
+
+}
+
 .features-section {
 	padding: 100px 30px;
 	text-align: center;
