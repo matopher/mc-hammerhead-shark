@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Data Viz Project</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Additions to Main -->
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('#graphIt').click(function() {
+        var profits = [];
+
+
+        $(".profit").each(function() {
+          profits.push(parseFloat($(this).val()));
+          
+        });
+
+         var data = {
+        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+      datasets: [
+            //  {
+            //     label: "My First dataset",
+            //     fillColor: "rgba(220,220,220,0.2)",
+            //     strokeColor: "rgba(220,220,220,1)",
+            //     pointColor: "rgba(220,220,220,1)",
+            //     pointStrokeColor: "#fff",
+            //     pointHighlightFill: "#fff",
+            //     pointHighlightStroke: "rgba(220,220,220,1)",
+            //     data: [65, 59, 80, 81, 56, 55, 40, 56, 43, 23, 54, 53]
+            // },
+            {
+          label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: profits
+                //data: [28, 48, 40, 19, 86, 27, 1000 ,65, 32, 86, 23, 85]
+            }
+          ]
+      };
+     
+    var option = {
+    responsive: true,
+    };
+
+    // Get the context of the canvas element we want to select
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of the chart.
+      });
+    });
+     
+
+    </script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">DataViz</a>
+      </div>
+      <ul class="nav nav-pills navbar-right">
+        <li role="presentation" class="active"><a href="#">Need Help?</a></li>
+      </ul>
+    </nav>
+
+    <div class="container center">
+
+
+      <div class="row">
+        <div class="col-xs-9 col-centered">
+          <h3>Enter total profits for each month:</h3>
+          <!-- <textarea class="form-control"></textarea> -->
+          <form>
+            <!-- <label for="usr">January:</label>
+            <input type="number" class="form-control" id="usr"> -->
+
+            <!-- <div style="border:1px solid #000;"> -->
+            <label for="textinput" style="cursor:text;">January: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">Febuary: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">March: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">April: $</label> 
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">May: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">June: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">July: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">August: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">September: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">October: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">November: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+            <label for="textinput" style="cursor:text;">December: $</label>
+            <input type="number" id="textinput" class="form-control profit"><br>
+              <button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="">Graph It!</button>
+            </form>
+            <!-- </div> -->
+        </div>
+      </div>
+
+    
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Current Graph</h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="myChart"></canvas>
+                <!-- <img src="img/graph-placeholder.png" class="img-responsive"> -->
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- <script type="text/javascript" src="js/script.js"></script>     -->
+  </body>
+</html>
