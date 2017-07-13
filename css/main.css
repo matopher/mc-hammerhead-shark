@@ -88,11 +88,6 @@ Flexbox Layout
 /*Whole Page*/
 
 .wrapper {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
 	background: #e1eec3;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -106,10 +101,7 @@ Flexbox Layout
 /*Graph Container*/
 
 .graph-section {
-	display: flex;
-    width: 70vw;
-    height: 30vw;
-    justify-content: center;
+	max-width: 70%;
 }
 
 .panel-heading {
@@ -118,44 +110,32 @@ Flexbox Layout
 }
 
 .flex-panel {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
+
 }
 
 .panel-body {
-	display: flex;
+
 }
 
 /*Input Container*/
 
 .input-section {
-	display: flex;
-	width: 70%;
 	padding: 15px;
-	flex-wrap: wrap;
-	justify-content: center;
 	background: rgba(255,255,255,.4);
+	max-width: 70%;
 }
 
 .input-section > * {
-	flex: 1;
 }
 
 .input-container {
-	display: flex;
-	justify-content: center;
-    flex-wrap: wrap;
+
 }
 
 /* Input Forms*/
 
 form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
 }
 
 form > * {
