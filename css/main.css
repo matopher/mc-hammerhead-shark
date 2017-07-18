@@ -45,6 +45,10 @@ nav {
 	margin: 0 auto;
 }
 
+.settings-section button {
+	margin: 15px;
+}
+
 #welcome-graph {
 	font-size: 10em;
 	padding: 40px 0px 0px;
