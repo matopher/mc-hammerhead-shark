@@ -17,7 +17,7 @@ nav {
 	padding: 10px;
 }
 
-div .btn {
+.input-section .btn {
 	margin: 15px;
 }
 
@@ -43,6 +43,10 @@ div .btn {
 	color: #0176FF;
 	text-align: center;
 	margin: 0 auto;
+}
+
+.settings-section button {
+	margin: 15px;
 }
 
 #welcome-graph {
