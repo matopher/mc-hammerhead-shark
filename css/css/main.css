@@ -1,0 +1,148 @@
+/*General Styling + Welcome Page*/
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+}
+
+h1 {
+	font-weight: 800;
+}
+
+h2, h3 {
+	font-weight: 600;
+}
+
+nav {
+	padding: 10px;
+}
+
+div .btn {
+	margin: 15px;
+}
+
+.center {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.col-centered {
+	margin: 0 auto;
+	float: none;
+
+}
+
+.features-section {
+	padding: 100px 30px;
+	text-align: center;
+}
+
+.features-section .glyphicon {
+	font-size:5em;
+	padding: 10px;
+	color: #0176FF;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#welcome-graph {
+	font-size: 10em;
+	padding: 40px 0px 0px;
+	color: #0176FF;
+}
+
+/* Graph Page */
+
+label, button {
+    padding-top: 20px;
+}
+
+button {
+	margin-top: 3%;
+}
+
+.submit-section {
+	padding: 0px 0px 30px 0px;
+	max-width: 75%;
+}
+
+.title {
+	letter-spacing: 4px;
+  	text-shadow:2px 2px 0 rgba(0,0,0,0.1);
+	padding-bottom: 20px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+.section-heading {
+	text-shadow:2px 2px 0 rgba(0,0,0,0.1);
+}
+
+#graph-it-button {
+}
+
+/*****************
+Flexbox Layout
+******************/
+
+/*Whole Page*/
+
+.wrapper {
+	background: #e1eec3;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.wrapper nav {
+	width: 100%;
+}
+
+/*Graph Container*/
+
+.graph-section {
+	max-width: 70%;
+}
+
+.panel-heading {
+	text-align: center;
+	width: 100%;
+}
+
+.flex-panel {
+
+}
+
+.panel-body {
+
+}
+
+/*Input Container*/
+
+.input-section {
+	padding: 15px;
+	background: rgba(255,255,255,.4);
+	max-width: 70%;
+}
+
+.input-section > * {
+}
+
+.input-container {
+
+}
+
+/* Input Forms*/
+
+form {
+
+}
+
+form > * {
+    flex-basis: 500px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
