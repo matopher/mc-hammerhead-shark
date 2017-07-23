@@ -64,40 +64,51 @@
   </form>
 </div>
 
+<!-- Active Settings Button -->
+<div class="row settings-section">
+  <div class="center">
+    <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#settingsModal">Settings</button>
+</div>
+</div>
+
 <div class="input-section row center">
   <div class="input-container center-block">
     <h3>Enter total profits for each month:</h3>
     <form id="formId">
-      <!-- <label for="textinput" style="cursor:text;">January: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">Febuary: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">March: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">April: $</label> 
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">May: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">June: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">July: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">August: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">September: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">October: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">November: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <label for="textinput" style="cursor:text;">December: $</label>
-      	<input type="number" id="textinput" class="form-control profit"><br>
-      <a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="changeDisplay()">Graph It!</button></a> -->
+
     </form>	
   </div>
 </div>
 
-</div>
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Settings</h3>
+      </div>
+      <div class="modal-body">
+        <!-- Graph Display Buttons-->
+        <div class="btn-group" data-toggle="buttons">
+          <p>What would you like to graph?</p>
+          <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> X-axis Only
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> X + Y axises
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</div> <!--End Wrapper Container -->
 
 <script type="text/javascript">
   var xMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
