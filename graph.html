@@ -73,8 +73,8 @@
 
 <div class="input-section row center">
   <div class="input-container center-block">
-    <h3>Enter total profits for each month:</h3>
-    <form id="formId">
+    <h3>Enter your data</h3>
+    <form id="formId" class="form-horizontal">
 
     </form>	
   </div>
@@ -173,10 +173,15 @@
     document.getElementById('formId').innerHTML = "";
     var html = '';
     for (var i=0; i<labelsArray.length;i++) {
-      html += '<label for="textinput" style="cursor:text;">'+ labelsArray[i] + ': $</label>';
+      html += '<div class="form-group col-sm-4">'
+      html += '<label for="textinput" style="cursor:text;">'+ labelsArray[i] + '</label>';
       html += '<input type="number" id="textinput" class="form-control profit"><br>';
+      html += '</div>'
     }
-    html += '<a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="drawThatGraph()">Graph It!</button></a>';
+    html += '<div class="col-sm-12">'
+    html += '<a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="drawThatGraph()">Graph It!</button></a>'
+    html += '</div>'
+    ;
     
     $("#formId").append(html);
   }
