@@ -17,7 +17,7 @@ nav {
 	padding: 10px;
 }
 
-div .btn {
+.graph-section .btn, .settings-section button {
 	margin: 15px;
 }
 
@@ -87,14 +87,14 @@ Flexbox Layout
 
 /*Whole Page*/
 
-.wrapper {
+body {
 	background: #e1eec3;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-.wrapper nav {
+body nav {
 	width: 100%;
 }
 
@@ -139,7 +139,6 @@ form {
 }
 
 form > * {
-    flex-basis: 500px;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
