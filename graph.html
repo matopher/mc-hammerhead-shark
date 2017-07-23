@@ -28,57 +28,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/mdb.min.js"></script>
 
-<script type="text/javascript">
-$(document).ready(function() {
-$('#graphIt').click(function() {
 
-var profits = [];
-
-
-$(".profit").each(function() {
-profits.push(parseFloat($(this).val()));
-
-});
-
-var data = {
-labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-datasets: [
-//  {
-//     label: "My First dataset",
-//     fillColor: "rgba(220,220,220,0.2)",
-//     strokeColor: "rgba(220,220,220,1)",
-//     pointColor: "rgba(220,220,220,1)",
-//     pointStrokeColor: "#fff",
-//     pointHighlightFill: "#fff",
-//     pointHighlightStroke: "rgba(220,220,220,1)",
-//     data: [65, 59, 80, 81, 56, 55, 40, 56, 43, 23, 54, 53]
-// },
-{
-label: "My Second dataset",
-    fillColor: "rgba(151,187,205,0.2)",
-    strokeColor: "rgba(151,187,205,1)",
-    pointColor: "rgba(151,187,205,1)",
-    pointStrokeColor: "#fff",
-    pointHighlightFill: "#fff",
-    pointHighlightStroke: "rgba(151,187,205,1)",
-    data: profits
-    //data: [28, 48, 40, 19, 86, 27, 1000 ,65, 32, 86, 23, 85]
-}
-]
-};
-
-var option = {
-responsive: true,
-};
-
-// Get the context of the canvas element we want to select
-var ctx = document.getElementById("myChart").getContext('2d');
-var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of the chart.
-});
-});
-
-
-</script>
 </head>
   
 <body>
@@ -90,8 +40,7 @@ var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of th
 	<h1>📈 Dataviz</h1>
 </section>  
 
-<!-- Graph Display section -->
-<div class="graph-section row center" id="graphSection">
+ <div style="display:none" class="graph-section row center" id="graphSection"> <!--style="display:none" -->
     <div class="panel panel-default flex-panel center-block">
       <div class="panel-heading">
       <h2 class="panel-title">Current Graph</h2>
@@ -102,19 +51,24 @@ var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of th
     </div> 
 </div>
 
-<!-- Active Settings Button -->
-<div class="row settings-section">
-  <div class="center">
-    <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#settingsModal">Settings</button>
-</div>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="sel1">Select your X value:</label>
+      <select class="form-control" id="dropDown" onchange="test();">
+        <option value="months" selected="selected">Months</option>
+        <option value="weekdays">Weekdays</option>
+        <option value="years">Years</option>
+      </select>
+    </div>
+  </form>
 </div>
 
-<!-- Input Section -->
 <div class="input-section row center">
   <div class="input-container center-block">
     <h3>Enter total profits for each month:</h3>
-    <form>
-      <label for="textinput" style="cursor:text;">January: $</label>
+    <form id="formId">
+      <!-- <label for="textinput" style="cursor:text;">January: $</label>
       	<input type="number" id="textinput" class="form-control profit"><br>
       <label for="textinput" style="cursor:text;">Febuary: $</label>
       	<input type="number" id="textinput" class="form-control profit"><br>
@@ -138,39 +92,95 @@ var myLineChart = new Chart(ctx).Line(data, option); //'Line' defines type of th
       	<input type="number" id="textinput" class="form-control profit"><br>
       <label for="textinput" style="cursor:text;">December: $</label>
       	<input type="number" id="textinput" class="form-control profit"><br>
-      <button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="">Graph It!</button>
+      <a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="changeDisplay()">Graph It!</button></a> -->
     </form>	
   </div>
-</div> 
+</div>
 
-<!-- Settings Modal -->
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content center">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Settings</h3>
-      </div>
-      <div class="modal-body">
-        <!-- Graph Display Buttons-->
-        <div class="btn-group" data-toggle="buttons">
-          <p>What would you like to graph?</p>
-          <label class="btn btn-primary active">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> X-axis Only
-          </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="options" id="option2" autocomplete="off"> X + Y axises
-          </label>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Save changes</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
 
-</div> <!--End Wrapper -->
+<script type="text/javascript">
+  var xMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var xWeekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  var xYears = ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"];
+  var labelsArray = [];
+  var profits = [];
+  var ctx = null;
+
+  var drawThatGraph = function() {
+    //var myLineChart = null;
+    changeDisplay();
+    profits = [];
+    $(".profit").each(function() {
+      profits.push(parseFloat($(this).val()));
+    });
+    console.log(profits);
+
+    var data = {
+      labels: labelsArray,
+      datasets: [
+        {
+        label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: profits
+        }
+      ]
+    };
+
+    var option = {
+      responsive: true,
+    };
+
+
+    var myLineChart = ctx.Line(data, option); 
+    // Get the context of the canvas element we want to select
+    // var ctx = document.getElementById("myChart").getContext('2d');
+    //var myLineChart = new Chart(ctx).Line(data, option);
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //  ctx.clear();
+  }
+
+
+  // $('#graphIt').click(function() {
+  //   drawThatGraph();
+  // });
+
+  $(document).ready(function() {
+    var context = document.getElementById("myChart").getContext('2d');
+    ctx = new Chart(context);
+  });
+
+
+  var changeDisplay = function() {
+    document.getElementById('graphSection').style.display = 'block';
+  }
+
+  var e = document.getElementById("dropDown");
+
+  var test = function() {
+    if (e.value === 'months') labelsArray = xMonths;
+    else if (e.value === 'weekdays') labelsArray = xWeekdays;
+    else if (e.value === 'years') labelsArray = xYears;
+
+    
+    document.getElementById('formId').innerHTML = "";
+    var html = '';
+    for (var i=0; i<labelsArray.length;i++) {
+      html += '<label for="textinput" style="cursor:text;">'+ labelsArray[i] + ': $</label>';
+      html += '<input type="number" id="textinput" class="form-control profit"><br>';
+    }
+    html += '<a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="drawThatGraph()">Graph It!</button></a>';
+    
+    $("#formId").append(html);
+  }
+  test();
+
+
+</script>
 </body>
 </html>
