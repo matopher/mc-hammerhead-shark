@@ -2,23 +2,12 @@
 $(function () {
 
 		function saveData() {
-			//var test = jquery("#textinput").value;
 			alert(test);
 		}
 
 		var data = {
 	    	labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
 			datasets: [
-	       		//  {
-		        //     label: "My First dataset",
-		        //     fillColor: "rgba(220,220,220,0.2)",
-		        //     strokeColor: "rgba(220,220,220,1)",
-		        //     pointColor: "rgba(220,220,220,1)",
-		        //     pointStrokeColor: "#fff",
-		        //     pointHighlightFill: "#fff",
-		        //     pointHighlightStroke: "rgba(220,220,220,1)",
-		        //     data: [65, 59, 80, 81, 56, 55, 40, 56, 43, 23, 54, 53]
-	        	// },
 	        	{
 					label: "My Second dataset",
 	            	fillColor: "rgba(151,187,205,0.2)",
