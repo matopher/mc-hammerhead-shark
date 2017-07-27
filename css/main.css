@@ -17,7 +17,7 @@ nav {
 	padding: 10px;
 }
 
-div .btn {
+.graph-section .btn, .settings-section button {
 	margin: 15px;
 }
 
@@ -87,29 +87,21 @@ Flexbox Layout
 
 /*Whole Page*/
 
-.wrapper {
-	display: flex;
-	width: 100%;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
+body {
 	background: #e1eec3;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
-.wrapper nav {
+body nav {
 	width: 100%;
 }
 
 /*Graph Container*/
 
 .graph-section {
-	display: flex;
-    width: 70vw;
-    height: 30vw;
-    justify-content: center;
+	max-width: 100%;
 }
 
 .panel-heading {
@@ -118,51 +110,62 @@ Flexbox Layout
 }
 
 .flex-panel {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
+
 }
 
 .panel-body {
-	display: flex;
+
 }
 
 /*Input Container*/
 
 .input-section {
-	display: flex;
-	width: 70%;
 	padding: 15px;
-	flex-wrap: wrap;
-	justify-content: center;
 	background: rgba(255,255,255,.4);
 }
 
 .input-section > * {
-	flex: 1;
 }
 
 .input-container {
-	display: flex;
-	justify-content: center;
-    flex-wrap: wrap;
+
 }
 
 /* Input Forms*/
 
 form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+
 }
 
 form > * {
-    flex-basis: 500px;
     align-items: center;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
+.form-horizontal .form-group {
+    margin: 0;
+}
+
+/************
+Media Queries
+************/
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px)  {  }
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px)  {  }
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px)  {  }
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px)  {  }
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {  }
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {  }
