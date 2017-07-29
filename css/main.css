@@ -66,6 +66,10 @@ nav {
 	margin-top: 20px;
 }
 
+.habit-list-item {
+    margin: .5em auto;
+}
+
 /* Graph Page */
 
 label, button {

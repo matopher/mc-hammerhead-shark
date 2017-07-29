@@ -83,7 +83,7 @@ $(document).ready(function() {
       // Add Button
 	    var habitButton = "";
 	    habitButton += '<div class="col-sm-12">'
-    	habitButton += '<button type="button" class="btn btn-primary btn-lg">' + newHabit + '</button>'
+    	habitButton += '<button type="button" class="btn btn-primary btn-lg habit-list-item">' + newHabit + '</button>'
     	habitButton += '</div>'
 	    $('#habit-list').append(habitButton);
     });
