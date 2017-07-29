@@ -29,7 +29,6 @@ nav {
 .col-centered {
 	margin: 0 auto;
 	float: none;
-
 }
 
 .features-section {
@@ -51,14 +50,22 @@ nav {
 	color: #0176FF;
 }
 
+#start-section .input-group {
+	margin: 0 auto;
+}
+
+.progress {
+    margin-top: 50px;
+}
+
+#save-button {
+	margin-top: 20px;
+}
+
 /* Graph Page */
 
 label, button {
     padding-top: 20px;
-}
-
-button {
-	margin-top: 3%;
 }
 
 .submit-section {
