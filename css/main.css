@@ -54,6 +54,10 @@ nav {
 	margin: 0 auto;
 }
 
+#start-next-btn {
+ 	margin-top: 25px;
+}
+
 .progress {
     margin-top: 50px;
 }

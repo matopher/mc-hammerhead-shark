@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Data Viz Project</title>
+    <title>TwentyOne</title>
 
 
 
@@ -42,12 +42,13 @@
   <!-- Bootstrap Container Wrapper -->
   <div class="container">
 
-    <!-- Page 1 Add Habit Section -->
-
+  <!-- Header -->
     <section class="title row center">
       <h1>📈 TwentyOne</h1>
       <h3>Add a New Habit</h3>
     </section>
+
+    <!-- Page 1 Add Habit Section -->
 
     <section id="start-section">
       <div class="row">
@@ -58,7 +59,8 @@
               <button class="btn btn-success" type="button">Add</button>
             </span>
           </div><!-- /input-group -->
-        </div><!-- /.col-lg-6 -->
+          <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button>
+        </div>
       </div><!-- /.row -->
     </section>
 
@@ -68,32 +70,26 @@
     <hr> </hr>
 
    <!--  Page 2 text section to set Habit and Unit -->
-   <section class="title row center">
-   <h1>📈 TwentyOne</h1>
-   <h3>Choose Your Unit</h3>
+   <section id="unit-section">
+     <div class="row">
+       <div class="col-xs-10 col-centered center">
+         <h2> I want to</h2>
+         <input class="form-control center" name="Habit" type="text" placeholder="run, push-up, crunch...">
+         <h2>by measuring</h2>
+         <input class="form-control center" name="Habit" type="text" placeholder="miles, reps, count...">
+         <h2>every day.</h2>
+         </div>
+         <div class="container-fluid center">
+           <a href="graph.html"><button type="button" class="btn btn-success btn-lg">Start Habit!</button></a>
+       </div>
+     </div>
    </section>
-
-   <div class="container-fluid center">
-   <h2> I want to</h2>
-   <input type="pushups" name="Habit" id="text" placeholder="run, push-up, crunch...">
-   <h2>by measuring</h2>
-   <input type="pushups" name="Habit" id="text" placeholder="miles, reps, count...">
-   <h2>everyday.</h2>
-   </div>
-   <div class="container-fluid center">
-     <a href="graph.html"><button type="button" class="btn btn-success btn-lg">Start Habit!</button></a>
-   </div>
    <!-- end of Page 2 section -->
 
 <br> </br>
 <hr> </hr>
 
 <!-- Page 3 Track Habit Section -->
-
-    <section class="title row center">
-      <h1>📈 TwentyOne</h1>
-      <h3>Track Habit</h3>
-    </section>
 
     <section id="track-section">
       <div class="row">
@@ -133,11 +129,6 @@
 
   <!-- Bootstrap Container Wrapper -->
 <div class="container">
-
-<section class="title row center">
-  <h1>📈 TwentyOne</h1>
-  <h3>Graph Your New Habit</h3>
-</section>
 
 <!-- words at the top -->
 </div>
