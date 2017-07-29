@@ -86,6 +86,9 @@ $(document).ready(function() {
     	habitButton += '<button type="button" class="btn btn-primary btn-lg">' + newHabit + '</button>'
     	habitButton += '</div>'
 	    $('#habit-list').append(habitButton);
+
+	    // Replace label text on pg 2
+	    $('#habit-name').append(newHabit);
     });
   });
 
