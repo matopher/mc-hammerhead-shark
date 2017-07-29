@@ -73,3 +73,19 @@
   }
   test();
 
+// Create New Habit on Page 1
+$(document).ready(function() { 
+    $('#add-habit-btn').click(function(){
+      var newHabit = $('#start-field').val();
+      console.log(newHabit);
+      $('#start-field').val("");
+      
+      // Add Button
+	    var habitButton = "";
+	    habitButton += '<div class="col-sm-12">'
+    	habitButton += '<button type="button" class="btn btn-primary btn-lg">' + newHabit + '</button>'
+    	habitButton += '</div>'
+	    $('#habit-list').append(habitButton);
+    });
+  });
+

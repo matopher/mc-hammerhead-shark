@@ -54,12 +54,18 @@
       <div class="row">
         <div class="col-xs-10 col-centered">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="What daily habit do you want to start?">
+            <input id="start-field" type="text" class="form-control" placeholder="What daily habit do you want to start?">
             <span class="input-group-btn">
-              <button class="btn btn-success" type="button">Add</button>
+              <button id="add-habit-btn" class="btn btn-success" type="button">Add</button>
             </span>
           </div><!-- /input-group -->
           <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button>
+        </div>
+        <div class="col-xs-10 col-centered center">
+          <h3>Your Habits</h3>
+          <div id="habit-list">
+            
+          </div>
         </div>
       </div><!-- /.row -->
     </section>
