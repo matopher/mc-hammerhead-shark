@@ -40,63 +40,13 @@
   </head>
   <body>
 
-    <!-- <nav class="pull-right">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Features</a></li>
-        <li role="presentation"><a href="#">Start Now</a></li>
-      </ul>
-    </nav> -->
+<!-- Page 1 Add Habit Section -->
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">DataViz</a>
-      </div>
-      <ul class="nav nav-pills navbar-right">
-        <li role="presentation"><a href="#features">Features</a></li>
-        <li role="presentation" class="active"><a href="firstStep.html">Get Started</a></li>
-      </ul>
-    </nav>
+<section class="title row center">
+  <h1>📈 Dataviz</h1>
+</section>
 
-    <div class="container-fluid center">
-      <span class="glyphicon glyphicon-object-align-bottom" id="welcome-graph"></span>
-      <h1>Create Your </h1>
-      <h3>Compare data sets with beautiful, fluid graphs.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
 
-    <div class="container-fluid center">
-      <a href="graph.html"><button type="button" class="btn btn-success btn-lg">Get Started</button></a>
-    </div>
-
-    <div class="container features-section" id="features">
-      <div class="row">
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-      </div>
-    </div>
-
-<br> </br>
-<hr> </hr>
    <!--  Page 2 text section to set Habit and Unit -->
    <section class="title row center">
    <h1>📈 Dataviz</h1>
@@ -147,6 +97,77 @@
       </div>
   </div>
 </div>
+
+</section>
+
+
+ <div style="display:none" class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+    <div class="panel panel-default flex-panel center-block">
+      <div class="panel-heading">
+      <h2 class="panel-title">Current Graph</h2>
+        </div>
+          <div class="panel-body">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="sel1">Select your X value:</label>
+      <select class="form-control" id="dropDown" onchange="test();">
+        <option value="months" selected="selected">Months</option>
+        <option value="weekdays">Weekdays</option>
+        <option value="years">Years</option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<!-- Active Settings Button -->
+<div class="row settings-section">
+  <div class="center">
+    <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#settingsModal">Settings</button>
+</div>
+</div>
+
+<div class="input-section row center">
+  <div class="input-container center-block">
+    <h3>Enter your data</h3>
+    <form id="formId" class="form-horizontal">
+
+    </form>
+  </div>
+</div>
+
+<!-- Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Settings</h3>
+      </div>
+      <div class="modal-body">
+        <!-- Graph Display Buttons-->
+        <div class="btn-group" data-toggle="buttons">
+          <p>What would you like to graph?</p>
+          <label class="btn btn-primary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> X-axis Only
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="options" id="option2" autocomplete="off"> X + Y axises
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 
 <!-- social media share buttons-->
@@ -203,5 +224,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>  
   </body>
 </html>
