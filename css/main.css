@@ -18,7 +18,7 @@ nav {
 }
 
 .graph-section .btn, .settings-section button {
-	margin: 15px;
+	margin: 25px 15px;
 }
 
 .center {
@@ -29,7 +29,6 @@ nav {
 .col-centered {
 	margin: 0 auto;
 	float: none;
-
 }
 
 .features-section {
@@ -51,14 +50,34 @@ nav {
 	color: #0176FF;
 }
 
+#start-section .input-group {
+	margin: 0 auto;
+}
+
+#start-next-btn {
+ 	margin-top: 25px;
+}
+
+.progress {
+    margin-top: 50px;
+}
+
+#save-button {
+	margin-top: 20px;
+}
+
+.habit-list-item {
+    margin: .5em auto;
+}
+
+#share-buttons {
+	display: none;
+}
+
 /* Graph Page */
 
 label, button {
     padding-top: 20px;
-}
-
-button {
-	margin-top: 3%;
 }
 
 .submit-section {
@@ -87,12 +106,13 @@ Flexbox Layout
 
 /*Whole Page*/
 
-body {
-	background: #e1eec3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*DISABLED FOR NOW*/
+/*body {
+	background: #e1eec3;
+	background: -webkit-linear-gradient(to top, #f05053, #e1eec3); 
+	background: linear-gradient(to top, #f05053, #e1eec3); 
+}*/
 
-}
 
 body nav {
 	width: 100%;
@@ -146,6 +166,21 @@ form > * {
 
 .form-horizontal .form-group {
     margin: 0;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline-block;
+margin:auto;
+/*margin-left:3em;
+margin-right:3em;
+margin-top:1em;
+margin-bottom:1em;*/
+
+
 }
 
 /************
