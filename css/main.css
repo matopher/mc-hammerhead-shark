@@ -18,7 +18,7 @@ nav {
 }
 
 .graph-section .btn, .settings-section button {
-	margin: 15px;
+	margin: 25px 15px;
 }
 
 .center {
@@ -70,6 +70,10 @@ nav {
     margin: .5em auto;
 }
 
+#share-buttons {
+	display: none;
+}
+
 /* Graph Page */
 
 label, button {
@@ -102,12 +106,13 @@ Flexbox Layout
 
 /*Whole Page*/
 
-body {
-	background: #e1eec3;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to top, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*DISABLED FOR NOW*/
+/*body {
+	background: #e1eec3;
+	background: -webkit-linear-gradient(to top, #f05053, #e1eec3); 
+	background: linear-gradient(to top, #f05053, #e1eec3); 
+}*/
 
-}
 
 body nav {
 	width: 100%;

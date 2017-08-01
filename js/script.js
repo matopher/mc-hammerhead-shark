@@ -114,12 +114,13 @@ $(document).ready(function() {
     });
 
     var checkDay = function() {
-      if(currentObj.day >= 22) {
+      if(currentObj.day >= 21) {
         console.log("Came out true");
         myLineChart = null;
         drawThatGraph()
         $('#currentHabit').css("display", "none");
         $('#congrats').css('display', 'inherit');
+        $('#share-buttons').css('display', 'inherit');
       }
       else {
         console.log("Came out false");
