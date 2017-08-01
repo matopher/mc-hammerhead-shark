@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Data Viz Project</title>
 
@@ -11,7 +11,20 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Additions to Main -->
-    <link href="css/main.css" rel="stylesheet">    
+    <link href="css/main.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TwentyOne</title>
+
+
+
+  <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,67 +32,267 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mdb.min.js"></script>
   </head>
   <body>
+  <!-- Bootstrap Container Wrapper -->
+  <div class="container" >
 
-    <!-- <nav class="pull-right">
-      <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Features</a></li>
-        <li role="presentation"><a href="#">Start Now</a></li>
-      </ul>
-    </nav> -->
+  <div class="round"></div>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">DataViz</a>
+  <!-- Header -->
+    <section class="title row center">
+      <h1><a href="index.html">📈 TwentyOne</a></h1>
+      <h3>Continue habit or create a new one!</h3>
+    </section>
+
+    <hr> </hr>
+
+    <!-- Page 1 Add Habit Section -->
+
+    <section id="start-section">
+      <div class="row">
+        <div class="col-xs-10 col-centered">
+          <!-- <div class="input-group">
+            <input id="start-field" type="text" class="form-control" placeholder="What daily habit do you want to start?">
+            <span class="input-group-btn">
+              <button id="add-habit-btn" class="btn btn-success" type="button">Add</button>
+            </span>
+          </div> --><!-- /input-group -->
+          <!-- <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button> -->
+        </div>
+        <div class="col-xs-10 col-centered center">
+          <h3>Your Habits:</h3>
+          <div id="habit-list">
+            
+          </div>
+
+        </div>
+      </div><!-- /.row -->
+    </section>
+    <!-- Active Settings Button -->
+    <div class="row settings-section">
+      <div class="center">
+        <button style="float: right" type="button" class="btn btn-success btn-lg center" data-toggle="modal" data-target="#settingsModal">Add New Habit</button>
       </div>
-      <ul class="nav nav-pills navbar-right">
-        <li role="presentation"><a href="#features">Features</a></li>
-        <li role="presentation" class="active"><a href="firstStep.html">Get Started</a></li>
-      </ul>
-    </nav>
-
-    <div class="container-fluid center">
-      <span class="glyphicon glyphicon-object-align-bottom" id="welcome-graph"></span>
-      <h1>Crunch tough data in seconds.</h1>
-      <h3>Compare data sets with beautiful, fluid graphs.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.</p> 
     </div>
 
-    <div class="container-fluid center">
-      <a href="graph.html"><button type="button" class="btn btn-success btn-lg">Get Started</button></a>
-    </div>
+    <!-- End of Page 1 Section -->
 
-    <div class="container features-section" id="features">
-      <div class="row">  
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
+    <!-- <br> </br> -->
+    
+
+   <!--  Page 2 text section to set Habit and Unit -->
+  <!--  <section id="unit-section">
+     <div class="row">
+       <div class="col-xs-10 col-centered center">
+         <h2> I want to <span id="habit-name"></span> by measuring</h2>
+         <input class="form-control center" name="Habit" type="text" placeholder="miles, reps, count...">
+         <h2>every day.</h2>
+         </div>
+         <div class="container-fluid center">
+           <button type="button" class="btn btn-success btn-lg">Start Habit!</button>
+       </div>
+     </div>
+   </section> -->
+   <!-- end of Page 2 section -->
+
+<!-- Page 3 Track Habit Section -->
+
+    <!-- <section id="track-section">
+      <div class="row">
+        <div class="col-xs-10 col-centered center">
+          <h3>How Many INSERT_UNIT did you complete today?</h3>
         </div>
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
+      </div> -->
+
+      <!-- <div class="row">
+        <div class="col-xs-3 col-centered">
+          <input type="text" class="form-control center" placeholder="0">
         </div>
-        <div class="col-xs-4">
-          <span class="glyphicon glyphicon-object-align-bottom"></span>
-          <h4>Feature Name</h4>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur.</p>
+        <div class="col-xs-3 col-centered center">
+          <button id="save-button" class="btn btn-primary">Save</button>
         </div>
-      </div>  
+      </div>
+ -->
+      <div id='currentHabit' style="display: none">
+        <hr> </hr>
+        <div class="row">
+          <div class="col-xs-10 col-centered">
+            <center><h3 style=" margin: auto">Day <span id="day"></span> of 21:</h3></center>
+            <div class="progress" style="margin-top : 0px;">
+              <div id="progressBarId" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                 
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input-section row center">
+          <div class="input-container center-block">
+            <h3>Enter your data</h3>
+            <form id="formId" class="form-horizontal">
+
+            </form>
+
+            <div class="col-xs-3 col-centered center">
+              <button id="save-button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- </section> -->
+
+<!-- End of Page 3 Track Habit Section -->
+
+
+<!-- Page 4 section showing graph & social share after unit is entered -->
+
+  <!-- Bootstrap Container Wrapper -->
+<!-- <div class="container"> THIS MAY NEED TO BE ADDED BACK IN IF PROBLEMS ARE FOUND -->
+
+<!-- words at the top -->
+</div>
+
+  <div id="congrats" style="display: none" class="container-fluid center">
+  <hr>
+     <h2>Whoohoo! You have completed</h2>
+     <h2>[total number][units] of [habit].</h2>
+      <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+        <div class="panel panel-default flex-panel center-block">
+          <div class="panel-heading">
+          <h2 class="panel-title">Current Graph</h2>
+            </div>
+              <div class="panel-body">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
     </div>
+</div>
+
+
+
+</section>
+
+
+<!--  <div style="display:none" class="graph-section row center" id="graphSection">
+    <div class="panel panel-default flex-panel center-block">
+      <div class="panel-heading">
+      <h2 class="panel-title">Current Graph</h2>
+        </div>
+          <div class="panel-body">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="container">
+  <form>
+    <div class="form-group">
+      <label for="sel1">Select your X value:</label>
+      <select class="form-control" id="dropDown" onchange="test();">
+        <option value="months" selected="selected">Months</option>
+        <option value="weekdays">Weekdays</option>
+        <option value="years">Years</option>
+      </select>
+    </div>
+  </form>
+</div> -->
+
+
+
+
+<!-- Settings Modal -->
+ <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content center">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Create a new habit!</h3>
+      </div>
+      <div class="modal-body">
+         <!-- Graph Display Buttons -->
+        <div class="row">
+
+          <div class="col-xs-10 col-centered center">
+            
+            <h2>Enter Habit:</h2>
+            <input id="new-habit" class="form-control center" name="Habit" type="text" placeholder="running, drawing, push-ups...">
+
+            <h2> I want to measure this using:</h2>
+            <input id="new-unit" class="form-control center" name="Habit" type="text" placeholder="miles, reps, count...">
+            
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="add-habit-btn" type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
+      </div>
+    </div> <!-- Modal Content -->
+  </div>
+ </div>
+ 
+ <!-- social media share buttons-->
+<section class="title row center">
+<div id="share-buttons">
+    <body>Share It!</body>
+
+    <!-- Email -->
+    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=Check%20out%20my%20new%20habit!!%20">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+
+    <!-- Google+ -->
+    <a href="https://plus.google.com/share?url=" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+    </a>
+
+    <!-- Pinterest -->
+    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+        <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+    </a>
+
+    <!-- Print -->
+    <a href="javascript:;" onclick="window.print()">
+        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+    </a>
+
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=&amp;title=Check out my new habit!" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+    </a>
+
+
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=&amp;text=Check%20out%20my%20new%20habit!&amp;hashtags=dataviz" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+
+
+
+<!-- End of page 4 -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>  
+  </div> <!--End Wrapper Container -->
   </body>
 </html>
