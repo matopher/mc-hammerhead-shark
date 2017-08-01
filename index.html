@@ -40,43 +40,54 @@
   </head>
   <body>
   <!-- Bootstrap Container Wrapper -->
-  <div class="container">
+  <div class="container" >
+
+  <div class="round"></div>
 
   <!-- Header -->
     <section class="title row center">
       <h1><a href="index.html">📈 TwentyOne</a></h1>
-      <h3>Add a New Habit</h3>
+      <h3>Continue habit or create a new one!</h3>
     </section>
+
+    <hr> </hr>
 
     <!-- Page 1 Add Habit Section -->
 
     <section id="start-section">
       <div class="row">
         <div class="col-xs-10 col-centered">
-          <div class="input-group">
+          <!-- <div class="input-group">
             <input id="start-field" type="text" class="form-control" placeholder="What daily habit do you want to start?">
             <span class="input-group-btn">
               <button id="add-habit-btn" class="btn btn-success" type="button">Add</button>
             </span>
-          </div><!-- /input-group -->
-          <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button>
+          </div> --><!-- /input-group -->
+          <!-- <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button> -->
         </div>
         <div class="col-xs-10 col-centered center">
-          <h3>Your Habits</h3>
+          <h3>Your Habits:</h3>
           <div id="habit-list">
             
           </div>
+
         </div>
       </div><!-- /.row -->
     </section>
+    <!-- Active Settings Button -->
+    <div class="row settings-section">
+      <div class="center">
+        <button style="float: right" type="button" class="btn btn-success btn-lg center" data-toggle="modal" data-target="#settingsModal">Add New Habit</button>
+      </div>
+    </div>
 
     <!-- End of Page 1 Section -->
 
-    <br> </br>
-    <hr> </hr>
+    <!-- <br> </br> -->
+    
 
    <!--  Page 2 text section to set Habit and Unit -->
-   <section id="unit-section">
+  <!--  <section id="unit-section">
      <div class="row">
        <div class="col-xs-10 col-centered center">
          <h2> I want to <span id="habit-name"></span> by measuring</h2>
@@ -87,79 +98,88 @@
            <button type="button" class="btn btn-success btn-lg">Start Habit!</button>
        </div>
      </div>
-   </section>
+   </section> -->
    <!-- end of Page 2 section -->
-
-<br> </br>
-<hr> </hr>
 
 <!-- Page 3 Track Habit Section -->
 
-    <section id="track-section">
+    <!-- <section id="track-section">
       <div class="row">
         <div class="col-xs-10 col-centered center">
           <h3>How Many INSERT_UNIT did you complete today?</h3>
-        </div><!-- /.col-xs-10 -->
-      </div><!-- /.row -->
+        </div>
+      </div> -->
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-xs-3 col-centered">
           <input type="text" class="form-control center" placeholder="0">
-        </div><!-- /.col-xs-3 -->
+        </div>
         <div class="col-xs-3 col-centered center">
           <button id="save-button" class="btn btn-primary">Save</button>
-        </div><!-- /.col-xs-3 -->
-      </div><!-- /.row -->
-
-
-      <div class="row">
-        <div class="col-xs-10 col-centered">
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-             Day 12 of 21
+        </div>
+      </div>
+ -->
+      <div id='currentHabit' style="display: none">
+        <hr> </hr>
+        <div class="row">
+          <div class="col-xs-10 col-centered">
+            <center><h3 style=" margin: auto">Day <span id="day"></span> of 21:</h3></center>
+            <div class="progress" style="margin-top : 0px;">
+              <div id="progressBarId" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                 
+              </div>
             </div>
           </div>
-        </div><!-- /.col-xs-10 -->
-      </div><!-- /.row -->
+        </div>
+        <div class="input-section row center">
+          <div class="input-container center-block">
+            <h3>Enter your data</h3>
+            <form id="formId" class="form-horizontal">
 
-    </section>
+            </form>
+
+            <div class="col-xs-3 col-centered center">
+              <button id="save-button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- </section> -->
 
 <!-- End of Page 3 Track Habit Section -->
 
-<br> </br>
-<hr> </hr>
 
 <!-- Page 4 section showing graph & social share after unit is entered -->
 
   <!-- Bootstrap Container Wrapper -->
-<div class="container">
+<!-- <div class="container"> THIS MAY NEED TO BE ADDED BACK IN IF PROBLEMS ARE FOUND -->
 
 <!-- words at the top -->
 </div>
-</section>
-<div class="container-fluid center">
-   <h2>Whoohoo! You have completed</h2>
-   <h2>[total number][units] of [habit].</h2>
 
-<h2>---graph here---<h2>
-
+  <div id="congrats" style="display: none" class="container-fluid center">
+  <hr>
+     <h2>Whoohoo! You have completed</h2>
+     <h2>[total number][units] of [habit].</h2>
+      <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+        <div class="panel panel-default flex-panel center-block">
+          <div class="panel-heading">
+          <h2 class="panel-title">Current Graph</h2>
+            </div>
+              <div class="panel-body">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div style="display:none" class="graph-section row center" id="graphSection"> <!--style="display:none" -->
-  <div class="panel panel-default flex-panel center-block">
-    <div class="panel-heading">
-    <h2 class="panel-title">Current Graph</h2>
-      </div>
-        <div class="panel-body">
-          <canvas id="myChart"></canvas>
-      </div>
-  </div>
-</div>
+
 
 </section>
 
 
- <div style="display:none" class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+<!--  <div style="display:none" class="graph-section row center" id="graphSection">
     <div class="panel panel-default flex-panel center-block">
       <div class="panel-heading">
       <h2 class="panel-title">Current Graph</h2>
@@ -168,9 +188,9 @@
             <canvas id="myChart"></canvas>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="container">
+<!-- <div class="container">
   <form>
     <div class="form-group">
       <label for="sel1">Select your X value:</label>
@@ -181,54 +201,44 @@
       </select>
     </div>
   </form>
-</div>
+</div> -->
 
-<!-- Active Settings Button -->
-<div class="row settings-section">
-  <div class="center">
-    <button type="button" class="btn btn-primary btn-lg center" data-toggle="modal" data-target="#settingsModal">Settings</button>
-</div>
-</div>
 
-<div class="input-section row center">
-  <div class="input-container center-block">
-    <h3>Enter your data</h3>
-    <form id="formId" class="form-horizontal">
 
-    </form>
-  </div>
-</div>
 
 <!-- Settings Modal -->
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
+ <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content center">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Settings</h3>
+        <h3 class="modal-title">Create a new habit!</h3>
       </div>
       <div class="modal-body">
-        <!-- Graph Display Buttons-->
-        <div class="btn-group" data-toggle="buttons">
-          <p>What would you like to graph?</p>
-          <label class="btn btn-primary active">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked> X-axis Only
-          </label>
-          <label class="btn btn-primary">
-            <input type="radio" name="options" id="option2" autocomplete="off"> X + Y axises
-          </label>
+         <!-- Graph Display Buttons -->
+        <div class="row">
+
+          <div class="col-xs-10 col-centered center">
+            
+            <h2>Enter Habit:</h2>
+            <input id="new-habit" class="form-control center" name="Habit" type="text" placeholder="running, drawing, push-ups...">
+
+            <h2> I want to measure this using:</h2>
+            <input id="new-unit" class="form-control center" name="Habit" type="text" placeholder="miles, reps, count...">
+            
+          </div>
         </div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Save changes</button>
+        <button id="add-habit-btn" type="button" class="btn btn-success" data-dismiss="modal">Save changes</button>
       </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-<!-- social media share buttons-->
+    </div> <!-- Modal Content -->
+  </div>
+ </div>
+ 
+ <!-- social media share buttons-->
 <section class="title row center">
 <div id="share-buttons">
     <body>Share It!</body>
