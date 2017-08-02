@@ -162,6 +162,7 @@ $(document).ready(function() {
           $('#day').html(localObj.day);
           $('#currentDay').html('');
           $('#currentDay').html(localObj.day);
+          $('#textinput').val("");
         }
     });
 
