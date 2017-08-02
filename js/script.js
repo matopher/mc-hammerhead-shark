@@ -74,7 +74,7 @@
     // for (var i=0; i<labelsArray.length;i++) {
       html += '<div class="form-group col-lg-4">'
         html += '<label for="textinput" style="cursor:text;">'+ 'Day  <span id="currentDay"></span></label>';
-        html += '<input type="number" id="textinput" class="form-control profit"><br>';
+        html += '<input type="text" pattern="[0-9]*" id="textinput" class="form-control profit"><br>';
       html += '</div>';
     // }
     html += '<div class="col-sm-12">';
