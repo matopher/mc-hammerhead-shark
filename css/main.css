@@ -78,6 +78,21 @@ nav {
 	display: none;
 }
 
+/* Modals */
+
+#textinput {
+	text-align: center;
+}
+
+.modal-title {
+	color: #fff;
+}
+
+.modal-footer {
+	border-top: none;
+	text-align: center;
+}
+
 /* Graph Page */
 
 label, button {
@@ -91,7 +106,6 @@ label, button {
 
 .title {
 	letter-spacing: 4px;
-  	text-shadow:2px 2px 0 rgba(0,0,0,0.1);
 	padding-bottom: 20px;
 	font-weight: 800;
 	text-transform: uppercase;
@@ -246,16 +260,6 @@ margin:auto;
 margin-right:3em;
 margin-top:1em;
 margin-bottom:1em;*/
-}
-
-#add-habit-btn{
-	position: fixed;
-	bottom: 5%;
-	margin: 4% auto;
-	width: 2em;
-	height: 2em;
-	border-radius: 50%;
-	font-size: 3em;
 }
 
 /************
