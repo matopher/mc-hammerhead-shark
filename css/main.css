@@ -40,6 +40,10 @@ nav {
     color: white;
 }
 
+/* Current Habits Nav */
+#currentHabit .nav {
+    margin-bottom: 5%;
+}
 
 /* Create an active/current tablink class */
 /*.active {
@@ -93,6 +97,8 @@ nav {
 
 #save-button {
 	margin-top: 20px;
+    min-width: 50%;
+}
 }
 
 .habit-list-item {
@@ -104,6 +110,20 @@ nav {
 }
 
 #share-buttons {
+	display: none;
+}
+
+/* SHOWING AND HIDING RULES*/
+
+#currentHabit {
+	display: none;
+}
+
+.activePage {
+	display: block;
+}
+
+.hiddenPage {
 	display: none;
 }
 
