@@ -123,7 +123,7 @@ $(document).ready(function() {
         myLineChart = null;
         drawThatGraph()
         $('#currentHabit').css("display", "block");
-        $('#congrats').css('display', 'inherit');
+        $('#congrats').css('display', 'block');
         $('#share-buttons').css('display', 'block');
       }
       else {
