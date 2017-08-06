@@ -54,7 +54,7 @@
 
 
 <!-- Nav Bar and Collapsable Menu -->
-<nav class="navbar navbar-default navbar-inverse" role="navigation">
+<!-- <nav class="navbar navbar-expand-lg primary-color" role="navigation">
    <div class="container-fluid" id="navfluid">
        <div class="navbar-header">
            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
@@ -63,31 +63,15 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="Index.html">Home</a>
-            <a class="navbar-brand" href="Index.html">Graph It!</a>
-<!-- above is where graph it function can go in the nav -->
-
-<!-- below is where created habits can go on the dropdown menu -->
-       </div>
-       <div class="collapse navbar-collapse" id="navigationbar">
-           <ul class="nav navbar-nav">
-               <li class="active"><a href="./Index.html">Habit 1</a></li>
-               <li><a href=".html">Habit 2</a></li>
-               <li><a href=".html">Habit 3</a></li>
-               <li><a href=".html">Habit 4</a></li>
-               <li><a href=".html">Clear Habits</a></li>
-           </ul>
-      </div><!-- /.navbar-collapse -->
-   </div><!-- /.container-fluid -->
-</nav>
-
+            <a class="navbar-brand" href="Index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <a class="navbar-brand"><i class="fa fa-bar-chart-o" aria-hidden="true"></i> Graph</a>
+</nav> -->
+  <div id="page-one">
   <!-- Header -->
     <section class="title row center">
       <h1><a href="index.html"><i class="fa fa-signal"></i> TwentyOne</a></h1>
       <h4>Start a new habit with daily tracking</h4>
     </section>
-
-
 
     <!-- Page 1 Add Habit Section -->
 
@@ -117,8 +101,7 @@
         <button type="button" class="btn btn-success btn-lg center" data-toggle="modal" data-target="#settingsModal">&#x2b; Create New Habit</button>
       </div>
     </div>
-
-    <!-- End of Page 1 Section -->
+  </div> <!-- End of Page 1 Section -->
 
     <!-- <br> </br> -->
 
@@ -156,7 +139,40 @@
         </div>
       </div>
  -->
-      <div id='currentHabit' style="display: none">
+      <div id='currentHabit'>
+        <ul class="nav md-pills nav-justified pills-secondary">
+          <li class="nav-item">
+              <a class="nav-link active" href="./index.html" role="tab"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+          </li>
+          <li class="nav-item">
+              <a id="graphIt" onclick="drawThatGraph()" class="nav-link" data-toggle="tab" href="#panel6" role="tab"><i class="fa fa-bar-chart-o" aria-hidden="true"></i> Graph</a>
+          </li>
+        </ul>
+      <!-- Tab panels -->
+      <div class="tab-content">
+          <!--Panel 2-->
+          <div class="tab-pane fade" id="panel6" role="tabpanel">
+            <!-- words at the top -->
+            </div>
+
+              <div id="congrats" style="display: none" class="container-fluid center">
+              <hr>
+                 <h2>Whoohoo! You have completed</h2>
+                 <h2>[total number][units] of [habit].</h2>
+                  <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+                    <div class="panel panel-default flex-panel center-block">
+                      <div class="panel-heading">
+                      <h2 class="panel-title">Current Graph</h2>
+                        </div>
+                          <div class="panel-body">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--/.Panel 2-->
+   
         <div class="row">
           <div class="col-xs-10 col-centered">
             <center><h3 style=" margin: auto">Day <span id="day"></span> of 21</h3></center>
@@ -176,7 +192,7 @@
           </div>
         </div>
       </div>
-
+   </div>
     <!-- </section> -->
 
 <!-- End of Page 3 Track Habit Section -->
@@ -187,28 +203,6 @@
   <!-- Bootstrap Container Wrapper -->
 <!-- <div class="container"> THIS MAY NEED TO BE ADDED BACK IN IF PROBLEMS ARE FOUND -->
 
-<!-- words at the top -->
-</div>
-
-  <div id="congrats" style="display: none" class="container-fluid center">
-  <hr>
-     <h2>Whoohoo! You have completed</h2>
-     <h2>[total number][units] of [habit].</h2>
-      <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
-        <div class="panel panel-default flex-panel center-block">
-          <div class="panel-heading">
-          <h2 class="panel-title">Current Graph</h2>
-            </div>
-              <div class="panel-body">
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-</section>
 
 
 <!--  <div style="display:none" class="graph-section row center" id="graphSection">
