@@ -44,6 +44,26 @@
 
   <div class="round"></div>
 
+
+<!-- Bootstrap Nav -->
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <!-- <div class="container"> -->
+      <a href="index.html">Home</a>
+
+      <a href="graph.html">Graph It! onclick="drawThatGraph()"</a>
+
+    </div>
+  </nav>
+
+<!-- Navigation Tabs -->
+  <div class="tab">
+
+      <button id="assetTab" class="tablinks headTabs" onclick="openTab(event, 'asset_types', 'headTabs', 'tabContentHead'); if(dialog) dialog.close();">Assets</button>
+      <button class="tablinks headTabs" onclick="openTab(event, 'non_asset_bha_items', 'headTabs', 'tabContentHead'); if(dialog) dialog.close();">BHA Items</button>
+      <button class="tabLinks headTabs" onclick="openTab(event, 'work_flow', 'headTabs', 'tabContentHead')">Work Flow</button>
+    </div>
+
   <!-- Header -->
     <section class="title row center">
       <h1><a href="index.html">📈 TwentyOne</a></h1>
