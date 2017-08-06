@@ -16,7 +16,36 @@ h2, h3 {
 nav {
 	padding: 10px;
 }
+/*nav When clicked*/
+.navbar-inverse .navbar-brand:hover {
+    color: blue;
+    background-color: transparent;
+}
+/*nav Normal status*/
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+/*Dropdown menu clicked highlighted background*/
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: blue;
+    background-color: #080808;
+}
+/*Dropdown menu clicked*/
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: blue;
+    background-color: #080808;
+}
+/*Dropdown menu Normal status*/
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
 
+
+/* Create an active/current tablink class */
+/*.active {
+  background-color: #191919;
+  color: red;*/
+}
 .graph-section .btn, .settings-section button {
 	margin: 25px 15px;
 }
@@ -190,14 +219,12 @@ Flexbox Layout
 /*DISABLED FOR NOW*/
 /*body {
 	background: #e1eec3;
-	background: -webkit-linear-gradient(to top, #f05053, #e1eec3); 
-	background: linear-gradient(to top, #f05053, #e1eec3); 
+	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);
+	background: linear-gradient(to top, #f05053, #e1eec3);
 }*/
 
 
-body nav {
-	width: 100%;
-}
+
 
 /*Graph Container*/
 
