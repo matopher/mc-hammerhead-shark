@@ -16,7 +16,40 @@ h2, h3 {
 nav {
 	padding: 10px;
 }
+/*nav When clicked*/
+.navbar-inverse .navbar-brand:hover {
+    color: blue;
+    background-color: transparent;
+}
+/*nav Normal status*/
+.navbar-inverse .navbar-brand {
+  color: white;
+}
+/*Dropdown menu clicked highlighted background*/
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: blue;
+    background-color: #080808;
+}
+/*Dropdown menu clicked*/
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: blue;
+    background-color: #080808;
+}
+/*Dropdown menu Normal status*/
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
 
+/* Current Habits Nav */
+#currentHabit .nav {
+    margin-bottom: 5%;
+}
+
+/* Create an active/current tablink class */
+/*.active {
+  background-color: #191919;
+  color: red;*/
+}
 .graph-section .btn, .settings-section button {
 	margin: 25px 15px;
 }
@@ -64,14 +97,49 @@ nav {
 
 #save-button {
 	margin-top: 20px;
+    min-width: 50%;
+}
 }
 
 .habit-list-item {
     margin: .5em auto;
 }
 
+#habit-list button {
+    min-width: 100%;
+}
+
 #share-buttons {
 	display: none;
+}
+
+/* SHOWING AND HIDING RULES*/
+
+#currentHabit {
+	display: none;
+}
+
+.activePage {
+	display: block;
+}
+
+.hiddenPage {
+	display: none;
+}
+
+/* Modals */
+
+#textinput {
+	text-align: center;
+}
+
+.modal-title {
+	color: #fff;
+}
+
+.modal-footer {
+	border-top: none;
+	text-align: center;
 }
 
 /* Graph Page */
@@ -87,7 +155,6 @@ label, button {
 
 .title {
 	letter-spacing: 4px;
-  	text-shadow:2px 2px 0 rgba(0,0,0,0.1);
 	padding-bottom: 20px;
 	font-weight: 800;
 	text-transform: uppercase;
@@ -100,6 +167,69 @@ label, button {
 #graph-it-button {
 }
 
+/************
+Full Screen Modal
+************/
+
+/* .modal-transparent */
+
+.modal-transparent {
+  background: transparent;
+}
+.modal-transparent .modal-content {
+  background: transparent;
+}
+.modal-backdrop.modal-backdrop-transparent {
+  background: #ffffff;
+}
+.modal-backdrop.modal-backdrop-transparent.in {
+  opacity: .9;
+  filter: alpha(opacity=90);
+}
+
+/* .modal-fullscreen */
+
+.modal-fullscreen {
+  background: transparent;
+}
+.modal-fullscreen .modal-content {
+  background: transparent;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.modal-backdrop.modal-backdrop-fullscreen {
+  background: #ffffff;
+}
+.modal-backdrop.modal-backdrop-fullscreen.in {
+  opacity: .97;
+  filter: alpha(opacity=97);
+}
+
+/* .modal-fullscreen size: we use Bootstrap media query breakpoints */
+
+.modal-fullscreen .modal-dialog {
+  margin: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .modal-fullscreen .modal-dialog {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .modal-fullscreen .modal-dialog {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-fullscreen .modal-dialog {
+     width: 1170px;
+  }
+}
+
 /*****************
 Flexbox Layout
 ******************/
@@ -109,14 +239,12 @@ Flexbox Layout
 /*DISABLED FOR NOW*/
 /*body {
 	background: #e1eec3;
-	background: -webkit-linear-gradient(to top, #f05053, #e1eec3); 
-	background: linear-gradient(to top, #f05053, #e1eec3); 
+	background: -webkit-linear-gradient(to top, #f05053, #e1eec3);
+	background: linear-gradient(to top, #f05053, #e1eec3);
 }*/
 
 
-body nav {
-	width: 100%;
-}
+
 
 /*Graph Container*/
 
@@ -179,8 +307,6 @@ margin:auto;
 margin-right:3em;
 margin-top:1em;
 margin-bottom:1em;*/
-
-
 }
 
 /************

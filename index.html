@@ -10,10 +10,18 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Material Bootstrap CSS -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.3.2/css/mdb.min.css" rel="stylesheet">
+
     <!-- Custom Additions to Main -->
     <link href="css/main.css" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,13 +52,26 @@
 
   <div class="round"></div>
 
+
+<!-- Nav Bar and Collapsable Menu -->
+<!-- <nav class="navbar navbar-expand-lg primary-color" role="navigation">
+   <div class="container-fluid" id="navfluid">
+       <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            <a class="navbar-brand"><i class="fa fa-bar-chart-o" aria-hidden="true"></i> Graph</a>
+</nav> -->
+  <div id="page-one">
   <!-- Header -->
     <section class="title row center">
-      <h1><a href="index.html">📈 TwentyOne</a></h1>
-      <h3>Continue habit or create a new one!</h3>
+      <h1><a href="index.html"><i class="fa fa-signal"></i> TwentyOne</a></h1>
+      <h4>Start a new habit with daily tracking</h4>
     </section>
-
-    <hr> </hr>
 
     <!-- Page 1 Add Habit Section -->
 
@@ -66,9 +87,9 @@
           <!-- <button id="start-next-btn" class="btn btn-success center" type="button">Next ➜</button> -->
         </div>
         <div class="col-xs-10 col-centered center">
-          <h3>Your Habits:</h3>
+          <h3>Your Habits</h3>
           <div id="habit-list">
-            
+
           </div>
 
         </div>
@@ -77,14 +98,13 @@
     <!-- Active Settings Button -->
     <div class="row settings-section">
       <div class="center">
-        <button type="button" class="btn btn-success btn-lg center" data-toggle="modal" data-target="#settingsModal">&#x2b; Add New Habit</button>
+        <button type="button" class="btn btn-success btn-lg center" data-toggle="modal" data-target="#settingsModal">&#x2b; Create New Habit</button>
       </div>
     </div>
-
-    <!-- End of Page 1 Section -->
+  </div> <!-- End of Page 1 Section -->
 
     <!-- <br> </br> -->
-    
+
 
    <!--  Page 2 text section to set Habit and Unit -->
   <!--  <section id="unit-section">
@@ -119,14 +139,46 @@
         </div>
       </div>
  -->
-      <div id='currentHabit' style="display: none">
-        <hr> </hr>
+      <div id='currentHabit'>
+        <ul class="nav md-pills nav-justified pills-secondary">
+          <li class="nav-item">
+              <a class="nav-link active" href="./index.html" role="tab"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+          </li>
+          <li class="nav-item">
+              <a id="graphIt" onclick="drawThatGraph()" class="nav-link" data-toggle="tab" href="#panel6" role="tab"><i class="fa fa-bar-chart-o" aria-hidden="true"></i> Graph</a>
+          </li>
+        </ul>
+      <!-- Tab panels -->
+      <div class="tab-content">
+          <!--Panel 2-->
+          <div class="tab-pane fade" id="panel6" role="tabpanel">
+            <!-- words at the top -->
+            </div>
+
+              <div id="congrats" style="display: none" class="container-fluid center">
+              <hr>
+                 <h2>Whoohoo! You have completed</h2>
+                 <h2>[total number][units] of [habit].</h2>
+                  <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
+                    <div class="panel panel-default flex-panel center-block">
+                      <div class="panel-heading">
+                      <h2 class="panel-title">Current Graph</h2>
+                        </div>
+                          <div class="panel-body">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <!--/.Panel 2-->
+   
         <div class="row">
           <div class="col-xs-10 col-centered">
-            <center><h3 style=" margin: auto">Day <span id="day"></span> of 21:</h3></center>
+            <center><h3 style=" margin: auto">Day <span id="day"></span> of 21</h3></center>
             <div class="progress" style="margin-top : 0px;">
               <div id="progressBarId" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                 
+
               </div>
             </div>
           </div>
@@ -137,14 +189,10 @@
             <form id="formId" class="form-horizontal">
 
             </form>
-
-            <div class="col-xs-3 col-centered center">
-              <button id="save-button" class="btn btn-primary">Save</button>
-            </div>
           </div>
         </div>
       </div>
-
+   </div>
     <!-- </section> -->
 
 <!-- End of Page 3 Track Habit Section -->
@@ -155,28 +203,6 @@
   <!-- Bootstrap Container Wrapper -->
 <!-- <div class="container"> THIS MAY NEED TO BE ADDED BACK IN IF PROBLEMS ARE FOUND -->
 
-<!-- words at the top -->
-</div>
-
-  <div id="congrats" style="display: none" class="container-fluid center">
-  <hr>
-     <h2>Whoohoo! You have completed</h2>
-     <h2>[total number][units] of [habit].</h2>
-      <div class="graph-section row center" id="graphSection"> <!--style="display:none" -->
-        <div class="panel panel-default flex-panel center-block">
-          <div class="panel-heading">
-          <h2 class="panel-title">Current Graph</h2>
-            </div>
-              <div class="panel-body">
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-</section>
 
 
 <!--  <div style="display:none" class="graph-section row center" id="graphSection">
@@ -206,29 +232,31 @@
 
 
 
-<!-- Settings Modal -->
- <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+<!-- Habit Creation Modal -->
+ <div class="modal modal-fullscreen fade" id="settingsModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-notify modal-success" role="document">
     <div class="modal-content center">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Create a new habit!</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="white-text" aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Set your habit</h3>
       </div>
       <div class="modal-body">
-         <!-- Graph Display Buttons -->
+        <div class="text-center">
+                    <i class="fa fa-check fa-4x animated rotateIn"></i>
+                </div>
         <div class="row">
 
           <div class="col-xs-10 col-centered center">
-            
-            <h2>Enter Habit:</h2>
+
+            <h2>What Habit will you start?</h2>
             <input id="new-habit" class="form-control center" name="Habit" type="text" placeholder="running, drawing, push-ups...">
 
-            <h2> I want to measure this using:</h2>
+            <h2>What number will you track daily?</h2>
             <input id="new-unit" class="form-control center" name="Habit" type="text" placeholder="miles, reps, count...">
-            
+
           </div>
         </div>
-        
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -237,16 +265,11 @@
     </div> <!-- Modal Content -->
   </div>
  </div>
- 
+
  <!-- social media share buttons-->
 <section class="title row center">
 <div id="share-buttons">
     <body>Share It!</body>
-
-    <!-- Email -->
-    <a href="mailto:?Subject=Simple Share Buttons&amp;Body=Check%20out%20my%20new%20habit!!%20">
-        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-    </a>
 
     <!-- Facebook -->
     <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
@@ -266,12 +289,7 @@
     <!-- Pinterest -->
     <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
         <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
-    </a>
 
-    <!-- Print -->
-    <a href="javascript:;" onclick="window.print()">
-        <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
-    </a>
 
     <!-- Reddit -->
     <a href="http://reddit.com/submit?url=&amp;title=Check out my new habit!" target="_blank">
@@ -292,7 +310,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>  
+    <script src="js/script.js"></script>
   </div> <!--End Wrapper Container -->
   </body>
 </html>
