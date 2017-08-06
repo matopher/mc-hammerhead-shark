@@ -74,9 +74,13 @@
     // for (var i=0; i<labelsArray.length;i++) {
       html += '<div class="form-group col-lg-4">'
         html += '<label for="textinput" style="cursor:text;">'+ 'Day  <span id="currentDay"></span></label>';
-        html += '<input type="tel" id="textinput" class="form-control profit"><br>';
+        html += '<input type="tel" id="textinput" class="form-control profit" placeholder="0"><br>';
       html += '</div>';
     // }
+    html += '<div class="col-xs-3 col-centered center">'
+    html += '<button id="save-button" class="btn btn-lg btn-primary">Save</button>'
+    html += '</div>'
+
     html += '<div class="col-sm-12">';
     html += '<a href="#graphSection"><button id="graphIt" type="button" class="btn btn-success btn-lg" onclick="drawThatGraph()">Graph It!</button></a>';
     html += '</div>';
@@ -179,3 +183,23 @@ var addHabitButton = function(habit) {
       habitButton += '</div>'
       return habitButton;
 }
+
+// .modal-backdrop classes fullscreen
+
+$(".modal-transparent").on('show.bs.modal', function () {
+  setTimeout( function() {
+    $(".modal-backdrop").addClass("modal-backdrop-transparent");
+  }, 0);
+});
+$(".modal-transparent").on('hidden.bs.modal', function () {
+  $(".modal-backdrop").addClass("modal-backdrop-transparent");
+});
+
+$(".modal-fullscreen").on('show.bs.modal', function () {
+  setTimeout( function() {
+    $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+  }, 0);
+});
+$(".modal-fullscreen").on('hidden.bs.modal', function () {
+  $(".modal-backdrop").addClass("modal-backdrop-fullscreen");
+});
