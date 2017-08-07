@@ -9,19 +9,37 @@
   var currentObj;
 
   var x21Days = [];
-  for (var i = 1; i < 22; i++) {
-    x21Days.push(i);
-  }
+  // for (var i = 1; i < 22; i++) {
+  //   x21Days.push(i);
+  // }
 
   var drawThatGraph = function() {
+
+    $('#currentHabit').css("display", "block");
+        $('#congrats').css('display', 'inherit');
+        $('#share-buttons').css('display', 'block');
+        $('.zeInput').css('display', 'none');
+        // drawThatGraph();
+        $('#dayTotal').html('');
+        $('#dayTotal').html(sumCongrats().toString());
+        $('#unit').html('');
+        $('#unit').html(currentObj.unit);
+        console.log(currentObj);
+
+    console.log("drawThatGraph was called");
     //changeDisplay();
+     x21Days = [];
     profits = [];
     // $(".profit").each(function() {
     //   profits.push(parseFloat($(this).val()));
     // });
 
-    for (var i = 0; i < 21; i++) {
+
+    for (var i = 0; i < currentObj.dayData.length; i++) { //21
       profits.push(currentObj.dayData[i]);
+      var j = i;
+      j++;
+      x21Days.push(j);
     }
     labelsArray = x21Days;
     console.log(profits);
@@ -59,6 +77,17 @@
 
   var changeDisplay = function() {
     document.getElementById('graphSection').style.display = 'block';
+  }
+
+  function sumCongrats() {
+
+    var arrayOfNumbers = currentObj.dayData.map(Number);
+    var localSum = 0;
+    for (var i = 0; i < arrayOfNumbers.length; i++) {
+      localSum += arrayOfNumbers[i];
+    }
+    console.log(localSum);
+    return localSum;
   }
 
   // var e = document.getElementById("dropDown");
@@ -117,17 +146,30 @@ $(document).ready(function() {
 	    $('#habit-list').append(addHabitButton(newHabit));
     });
 
+    $(".delete").click(function(e) {
+      e.stopImmediatePropagation();
+
+
+      var parent = $(this).parent();
+      localStorage.removeItem("@" + parent[0].id + "Obj");
+      parent.remove();
+
+    });
+
+   
+
     var checkDay = function() {
-      if(currentObj.day >= 21) {
-        console.log("Came out true");
-        myLineChart = null;
-        drawThatGraph()
-        $('#currentHabit').css("display", "block");
-        $('#congrats').css('display', 'inherit');
-        $('#share-buttons').css('display', 'block');
+
+      if(currentObj.dayData.length >= 21) {
+      // if(currentObj.day >= 21) {
+        // console.log("Came out true");
+        //myLineChart = null;
+        return;
+     // drawThatGraph();
+       
       }
       else {
-        console.log("Came out false");
+        // console.log("Came out false");
         $('#currentHabit').css("display", "block");
         $('#congrats').css('display', 'none');
         myLineChart = null;
@@ -135,7 +177,9 @@ $(document).ready(function() {
     };
     
 
-    $('.habitButton').click(function() { 
+    $('.habitButton').click(function(e) { 
+      // if( e.target !== this) return;
+      console.log("Here");
 
       for (var i = 0; i < keys.length; i++) {
         var getObj = JSON.parse(localStorage.getItem(keys[i]));
@@ -143,9 +187,18 @@ $(document).ready(function() {
           currentObj = getObj;
           
           $('#progressBarId').css('width', String(getObj.day/21 * 100) + '%');
-          $('#day').html('');
-          $('#day').html(getObj.day);
+          
+            $('#day').html('');
+            if(getObj.dayData.length <= 20) {
+              $('#day').html(getObj.dayData.length + 1); 
+            }
+            else {
+              $('#day').html(getObj.dayData.length); 
+              drawThatGraph();
+            }
+          
           $('#currentDay').html('');
+
           $('#currentDay').html(getObj.day);
         }
       }
@@ -154,24 +207,45 @@ $(document).ready(function() {
     });
 
     $('#save-button').click(function() { 
+      console.log("Hereinsave");
         if ($('#textinput').val() !== '') {
           localObj = currentObj;
           checkDay();
-          localObj.day++;
+          
+            localObj.day++;
+          
           localObj.dayData.push($('#textinput').val());
           localStorage.setItem("@"+localObj.name+"Obj", JSON.stringify(localObj));
 
+
+
           $('#progressBarId').css('width', String(localObj.day/21 * 100) + '%');
-          $('#day').html('');
-          $('#day').html(localObj.day);
-          $('#currentDay').html('');
-          $('#currentDay').html(localObj.day);
+
+           $('#day').html('');
+            if(getObj.dayData.length <= 20) {
+              $('#day').html(getObj.dayData.length + 1); 
+            }
+            else {
+              $('#day').html(getObj.dayData.length); 
+              drawThatGraph();
+              return;
+            }
+          
+
+
+
+
+          // $('#day').html('');
+          // $('#day').html(localObj.day);
+          // $('#currentDay').html('');
+          // $('#currentDay').html(localObj.dayData.length ++);
           $('#textinput').val("");
         }
     });
 
-  });
 
+
+  });
 
 
 
@@ -179,10 +253,16 @@ $(document).ready(function() {
 var addHabitButton = function(habit) {
   var habitButton = "";
       habitButton += '<div class="col-sm-12">'
-      habitButton += '<button id="' + habit + '" type="button" class="btn btn-primary btn-lg habit-list-item habitButton">' + habit + '</button>'
+      habitButton += '<button id="' + habit + '" type="button" class="btn btn-primary btn-lg habit-list-item habitButton">' + habit + '<span class="delete" style="float: right;">X</span></button>'
       habitButton += '</div>'
       return habitButton;
 }
+
+
+// function deleteHabbit() {
+//   console.log('Im deleted');
+//   $('').parent()
+// }
 
 // .modal-backdrop classes fullscreen
 
