@@ -49,6 +49,14 @@
 
     myLineChart = ctx.Line(data, option); 
 
+    // Fill in span elements for Congrats message
+        var currentTotal = 0;
+    for (var i = 0; i < currentObj.dayData.length; i++) {
+        currentTotal += currentObj.dayData[i] << 0;
+    $('#congrats_total').prepend(currentTotal);
+    $('#congrats_habit').html(currentObj.name + '?');
+    $('#congrats_unit').append(currentObj.unit);
+}
   }
 
   $(document).ready(function() {
