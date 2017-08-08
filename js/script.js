@@ -253,7 +253,7 @@ $(document).ready(function() {
 var addHabitButton = function(habit) {
   var habitButton = "";
       habitButton += '<div class="col-sm-12">'
-      habitButton += '<button id="' + habit + '" type="button" class="btn btn-primary btn-lg habit-list-item habitButton">' + habit + '<span class="delete" style="float: right;">X</span></button>'
+      habitButton += '<button id="' + habit + '" type="button" class="btn btn-primary btn-lg habit-list-item habitButton">' + habit + '<span class="delete" style="float: right;"><i class="fa fa-trash" aria-hidden="true"></i></span></button>'
       habitButton += '</div>'
       return habitButton;
 }
