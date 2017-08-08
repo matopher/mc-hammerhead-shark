@@ -285,7 +285,7 @@ $(".modal-fullscreen").on('hidden.bs.modal', function () {
 });
 
 $(document).ready(function() {
-    $('#habit-list *').click(function(){
+    $('#habit-list .col-sm-12 button').click(function(){
       $('#currentHabit').toggleClass('activePage');
       $('#page-one').addClass('hiddenPage');
   });
