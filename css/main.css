@@ -121,6 +121,10 @@ nav {
 	margin-top: 3%;
 }
 
+button.btn.btn-success.btn-lg.center {
+    margin-top: 1em;
+}
+
 /* SHOWING AND HIDING RULES*/
 
 #currentHabit {
