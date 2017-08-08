@@ -113,6 +113,22 @@ nav {
 	display: none;
 }
 
+#victory-icon {
+	color: #00C851;
+}
+
+#graphSection {
+	margin-top: 3%;
+}
+
+button.btn.btn-success.btn-lg.center {
+    margin-top: 1em;
+}
+
+.nav-link {
+	margin-top: 5%;
+}
+
 /* SHOWING AND HIDING RULES*/
 
 #currentHabit {
@@ -158,6 +174,7 @@ label, button {
 	padding-bottom: 20px;
 	font-weight: 800;
 	text-transform: uppercase;
+	margin-top: 5%;
 }
 
 .section-heading {
