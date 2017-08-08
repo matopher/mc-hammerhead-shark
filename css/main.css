@@ -113,6 +113,14 @@ nav {
 	display: none;
 }
 
+#victory-icon {
+	color: #00C851;
+}
+
+#graphSection {
+	margin-top: 3%;
+}
+
 /* SHOWING AND HIDING RULES*/
 
 #currentHabit {
