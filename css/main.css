@@ -125,6 +125,10 @@ button.btn.btn-success.btn-lg.center {
     margin-top: 1em;
 }
 
+.nav-link {
+	margin-top: 5%;
+}
+
 /* SHOWING AND HIDING RULES*/
 
 #currentHabit {
